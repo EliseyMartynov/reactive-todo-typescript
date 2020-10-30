@@ -8,6 +8,6 @@ pages: # задание должно быть именованными стра�
     - npm run build
   artifacts:
     paths:
-      - build.
+      - build
   only:
     - master
