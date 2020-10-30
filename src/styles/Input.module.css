@@ -1,0 +1,53 @@
+.box {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.input {
+  width: 400px;
+  outline: none;
+  padding: .5rem 1rem;
+  border: none;
+  font-family: "Roboto Mono", monospace;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: .5rem 1rem;
+  color: var(--bg);
+  background: var(--text);
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: .2s;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transition: .2s;
+}
+
+.btn:active {
+  transition: .2s;
+  transform: scale(.95);
+}
+
+@media (max-width: 650px) {
+
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+  }
+
+  .input {
+    display: inline-flex;
+    width: 70%;
+  }
+
+  .btn {
+    display: inline-block;
+  }
+}
