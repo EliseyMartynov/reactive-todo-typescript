@@ -11,7 +11,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const onDragEnd = (result) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
     dispatch(reorderTodo({before: source.index, after: destination.index}))
   }
 

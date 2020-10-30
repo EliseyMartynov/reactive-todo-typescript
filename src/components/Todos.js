@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styles from "../styles/Todos.module.css";
 import SingleTodo from "./SingleTodo";
-import { Droppable, Draggable } from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 const Todos = () => {
   const todos = useSelector(state => state.todos);
