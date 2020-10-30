@@ -2,12 +2,17 @@
 
 pages: # задание должно быть именованными страницами
   image: node:latest
-  stage: deploy
-  script:
-    - npm ci
-    - npm run build
-  artifacts:
-    paths:
-      - build
-  only:
-    - master
+  stages:
+    - build
+    - deploy
+  
+  build:
+    stage: build
+    script:
+      - npm install
+      - npm run-script build
+
+  deploy:
+    stage: deploy
+    script:
+      - npm run-script deploy
