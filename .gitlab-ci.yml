@@ -7,7 +7,7 @@ pages: # задание должно быть именованными стра�
     - npm ci
     - npm run build
     - mv public public-vue # GitLab Pages хук для каталога public
-    - mv dist public # переименование каталога dist (результат команды npm run build)
+    - mv build public # rename dist to build because it is React # переименование каталога dist (результат команды npm run build)
     # опционально, можно активировать поддержку gzip с помощью следующей строки:
     - find public -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
   artifacts:
@@ -15,4 +15,4 @@ pages: # задание должно быть именованными стра�
       - public # путь к артефакту должен быть /public для GitLab Pages
   only:
     - master
-    # https://stackoverflow.com/questions/55148058/hosting-react-app-with-gitlab-pages-on-root-domain - when I read that I decided to make VUE CI in React app
+    # https://stackoverflow.com/questions/55148058/hosting-react-app-with-gitlab-pages-on-root-domain - when I read that I decided to make almost VUE CI in React app
