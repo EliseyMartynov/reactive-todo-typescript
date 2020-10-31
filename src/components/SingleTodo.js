@@ -77,7 +77,7 @@ const SingleTodo = ({ id, text, completed, index }) => {
           {/*show accept when editing*/}
           {!edit ? (
             <span onClick={() => editHandler()} className={styles.edit}>
-              <i className="fas fa-edit"></i>
+              <i className="fas fa-pen-square"></i>
             </span>
           ) : (
             <span onClick={() => acceptEditsHandler()} className={styles.edit}>

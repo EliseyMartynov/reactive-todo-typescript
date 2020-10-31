@@ -11,18 +11,23 @@
 }
 
 .checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: 25px;
   height: 25px;
-  border: 1px solid var(--text);
+  border: 2px solid var(--text);
   cursor: pointer;
   outline: none;
 }
 
-.checkbox:checked {
-  background: var(--text);
+.checkbox:checked::after {
+  content: '✔';
+  font-size: 1.1rem;
+  color: var(--text);
 }
 
 .inputBox {
@@ -90,9 +95,14 @@ input.text {
   color: var(--secondary);
 }
 
+i {
+  font-size: 1.3rem;
+}
+
 @media (max-width: 1000px) {
   .box {
     width: 80%;
+    grid-column-gap: 20px;
   }
 }
 

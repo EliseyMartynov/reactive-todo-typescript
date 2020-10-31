@@ -13,27 +13,44 @@ const Input = () => {
     setTxt(e.target.value);
   };
 
+  const validationHandler = () => {
+    const failStyle = `${styles.inputFailed}`;
+    const todoInput = document.querySelector("#todo-input");
+    if (txt == 0) {
+      todoInput.classList.add(failStyle);
+    } else {
+      if (todoInput.classList.contains(failStyle)) {
+        todoInput.classList.remove(failStyle);
+      }
+    }
+  };
+
   const addTodoHandler = e => {
     e.preventDefault();
-    const newTodo = {
-      id: uuid(),
-      text: txt
-    };
-    dispatch(addTodo(newTodo));
-
-    setTxt("");
+    if (txt != 0) {
+      const newTodo = {
+        id: uuid(),
+        text: txt
+      };
+      dispatch(addTodo(newTodo));
+      setTxt("");
+    }
   };
 
   return (
     <div className={styles.box}>
       <form onSubmit={e => addTodoHandler(e)}>
         <input
+          id="todo-input"
+          onKeyUp={() => validationHandler()}
           onChange={e => modelInput(e)}
           value={txt}
           className={styles.input}
           type="text"
         />
-        <button onClick={(e) => addTodoHandler(e)} className={styles.btn}>Todo!</button>
+        <button onClick={e => addTodoHandler(e)} className={styles.btn}>
+          Todo!
+        </button>
       </form>
     </div>
   );

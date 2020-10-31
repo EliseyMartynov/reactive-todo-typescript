@@ -5,7 +5,8 @@
 }
 
 :root {
-  --bg: #2F2A0C;
+  --bg: #222;
+  --primary: #2F2A0C;
   --text: #E7C235;
   --secondary: #AE9B2D;
 }

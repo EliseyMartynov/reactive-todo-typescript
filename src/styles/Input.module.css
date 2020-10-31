@@ -5,11 +5,16 @@
 }
 
 .input {
+  border: 2px solid transparent !important;
   width: 400px;
   outline: none;
   padding: .5rem 1rem;
   border: none;
   font-family: "Roboto Mono", monospace;
+}
+
+.inputFailed {
+  border: 2px solid red !important;
 }
 
 .btn {
