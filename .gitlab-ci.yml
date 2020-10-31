@@ -1,5 +1,6 @@
 # .gitlab-ci.yml файл расположен в корневом каталоге репозитория
 
+pages:
   image: node:latest
   stage: deploy
   script:
@@ -14,4 +15,4 @@
       - public # путь к артефакту должен быть /public для GitLab Pages
   only:
     - master
-    # https://stackoverflow.com/questions/55148058/hosting-react-app-with-gitlab-pages-on-root-domain - when I read that I decided to make almost VUE CI in React app
+    # https://stackoverflow.com/questions/55148058/hosting-react-app-with-gitlab-pages-on-root-domain - when I read that I decided to make almost VUE CI in React app. And added to package.json - homepage field that I found in Net as well
