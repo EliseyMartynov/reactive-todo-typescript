@@ -1,7 +1,6 @@
 # .gitlab-ci.yml файл расположен в корневом каталоге репозитория
 
   image: node:latest
-<<<<<<< HEAD
   stage: deploy
   script:
     - npm ci
@@ -16,19 +15,3 @@
   only:
     - master
     # https://stackoverflow.com/questions/55148058/hosting-react-app-with-gitlab-pages-on-root-domain - when I read that I decided to make almost VUE CI in React app
-=======
-  stages:
-    - build
-    - deploy
-
-  build:
-    stage: build
-    script:
-      - npm install
-      - npm run-script build
-
-  deploy:
-    stage: deploy
-    script:
-      - npm run-script deploy
->>>>>>> reactive-todo/master
