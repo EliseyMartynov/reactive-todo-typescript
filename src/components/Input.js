@@ -16,7 +16,7 @@ const Input = () => {
   const validationHandler = () => {
     const failStyle = `${styles.inputFailed}`;
     const todoInput = document.querySelector("#todo-input");
-    if (txt == 0) {
+    if (!txt) {
       todoInput.classList.add(failStyle);
     } else {
       if (todoInput.classList.contains(failStyle)) {
@@ -27,7 +27,7 @@ const Input = () => {
 
   const addTodoHandler = e => {
     e.preventDefault();
-    if (txt != 0) {
+    if (txt) {
       const newTodo = {
         id: uuid(),
         text: txt
