@@ -16,7 +16,8 @@ const Input = () => {
   const validationHandler = () => {
     const failStyle = `${styles.inputFailed}`;
     const todoInput = document.querySelector("#todo-input");
-    if (txt == 0) {
+    {/*https://www.regular-expressions.info/shorthand.html find whitespace expression here*/}
+    if (txt.match(/^\s+$/ig) !== null || !txt) {
       todoInput.classList.add(failStyle);
     } else {
       if (todoInput.classList.contains(failStyle)) {
@@ -27,7 +28,7 @@ const Input = () => {
 
   const addTodoHandler = e => {
     e.preventDefault();
-    if (txt != 0) {
+    if (txt.match(/^\s+$/ig) === null || txt) {
       const newTodo = {
         id: uuid(),
         text: txt
