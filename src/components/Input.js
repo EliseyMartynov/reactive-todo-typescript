@@ -12,7 +12,6 @@ const Input = () => {
   const modelInput = e => {
     setTxt(e.target.value);
   };
-
   const validationHandler = () => {
     const failStyle = `${styles.inputFailed}`;
     const todoInput = document.querySelector("#todo-input");
@@ -27,7 +26,7 @@ const Input = () => {
 
   const addTodoHandler = e => {
     e.preventDefault();
-    if (txt.match(/^\s+$/ig) === null || txt) {
+    if (!(txt.match(/^\s+$/ig) !== null || !txt)) {
       const newTodo = {
         id: uuid(),
         text: txt
