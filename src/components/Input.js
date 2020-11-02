@@ -16,8 +16,6 @@ const Input = () => {
   const validationHandler = () => {
     const failStyle = `${styles.inputFailed}`;
     const todoInput = document.querySelector("#todo-input");
-    console.log('test')
-    {/*https://www.regular-expressions.info/shorthand.html find whitespace expression here*/}
     if (txt.match(/^\s+$/ig) !== null || !txt) {
       todoInput.classList.add(failStyle);
     } else {
