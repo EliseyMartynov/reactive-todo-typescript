@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, BaseSyntheticEvent } from "react";
 import styles from "../styles/Input.module.css";
 import { v4 as uuid } from "uuid";
 import { useDispatch } from "react-redux";
@@ -9,9 +9,10 @@ const Input = () => {
 
   const [txt, setTxt] = useState("");
 
-  const modelInput = e => {
+  const modelInput = (e: BaseSyntheticEvent) => {
     setTxt(e.target.value);
   };
+
   const validationHandler = () => {
     const failStyle = `${styles.inputFailed}`;
     const todoInput = document.querySelector("#todo-input");
@@ -24,7 +25,7 @@ const Input = () => {
     }
   };
 
-  const addTodoHandler = e => {
+  const addTodoHandler = (e: BaseSyntheticEvent) => {
     e.preventDefault();
     if (!(txt.match(/^\s+$/ig) !== null || !txt)) {
       const newTodo = {

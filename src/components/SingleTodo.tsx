@@ -1,14 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, BaseSyntheticEvent } from "react";
 import { useDispatch } from "react-redux";
 import styles from "../styles/SingleTodo.module.css";
-import { completeTodo, editTodo, deleteTodo } from "../features/todosSlice.js";
+import { completeTodo, editTodo, deleteTodo } from "../features/todosSlice";
 import { Draggable } from "react-beautiful-dnd";
 
-const SingleTodo = ({ id, text, completed, index }) => {
+type SingleTodoProps = {
+  id?: string;
+  text?: string;
+  completed?: boolean;
+  index?: number;
+};
+
+const SingleTodo = ({ id, text, completed, index }: SingleTodoProps) => {
   const [localInput, setLocalInput] = useState(text);
   const [edit, setEdit] = useState(false);
 
-  const modelHandler = e => {
+  const modelHandler = (e: BaseSyntheticEvent) => {
     setLocalInput(e.target.value);
   };
 
